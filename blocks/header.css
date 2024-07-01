@@ -1,6 +1,6 @@
 .header {
   padding-top: 45px;
-  border-bottom: 1px solid #545454;
-  height: 74px;
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
+  min-height: 74px;
   margin: 0;
 }

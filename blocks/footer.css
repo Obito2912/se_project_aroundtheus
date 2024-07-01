@@ -1,8 +1,7 @@
-.footer,
-.page__section {
+.footer {
   color: #545454;
-  width: 318px;
+  width: 100%;
   font-weight: 400;
   font-size: 18px;
-  margin: auto auto 60px 0;
+  margin: 67px auto 60px 0;
 }

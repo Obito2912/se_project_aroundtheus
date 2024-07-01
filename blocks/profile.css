@@ -21,6 +21,8 @@
   align-self: flex-end;
   border: 1px solid #ffffff;
   min-width: 24px;
+  cursor: pointer;
+  /* Please create a hover state for the button, according to the design. */
 }
 
 .profile__add-button {
@@ -33,6 +35,8 @@
   border: 2px solid #ffffff;
   min-width: 80px;
   border-radius: 2px;
+  cursor: pointer;
+  /* Please create a hover state for the button, according to the design. */
 }
 
 .profile__title {
@@ -41,7 +45,6 @@
   font-weight: 500;
   grid-area: title;
   margin: 0;
-  height: 39px;
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 373px;
