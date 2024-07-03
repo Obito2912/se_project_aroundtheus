@@ -1,49 +1,37 @@
-/* make sure to remove unnecessary duplicated property values unless they change with different resolutions */
-
 @media screen and (max-width: 320px) {
     .page {
-        text-align: center;
-        margin: 0;
-        width: 100px;
-        display: flex;
+        max-width: 320px;
     }
 
     .header {
         padding-top: 28px;
         min-height: 56px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
     }
 
     .header__image {
-        width: 126px;
-        height: 24px;
+        max-width: 126px;
+        min-height: 24px;
         margin: 0 auto auto 27px;
     }
 
     .profile {
         flex-direction: column;
-        padding: 42px 0 36px 0;
-        margin: 0;
+        padding: 42px 0 36px;
     }
 
-    .card__list {
-        display: grid;
+    .cards__list {
         justify-content: center;
     }
 
     .profile__title {
         font-size: 22px;
-        font-weight: 500;
-        margin-left: auto;
-        margin-right: 10px;
         max-width: 196px;
     }
 
     .profile__info {
-        display: grid;
-        grid-template-columns: 1fr auto;
+        align-items: center;
+        justify-items: center;
+        position: relative;
     }
 
     .profile__image {
@@ -52,20 +40,21 @@
 
     .profile__description {
         max-width: 282px;
-        text-align: center;
         font-size: 14px;
-        font-weight: 400;
         margin-top: 14px;
     }
 
     .profile__add-button {
-        margin-top: 36px;
+        margin: 36px 0 0;
         width: 282px;
     }
 
     .profile__edit-button {
-        margin: 0 15px 0 auto;
-        width: 18px;
+        margin: 0;
+        max-width: 18px;
+        position: absolute;
+        top: 10px;
+        right: 34px;
     }
 
     .page__content {
@@ -73,8 +62,8 @@
     }
 
     .footer {
-        width: 100%;
-        display: flex;
-        margin-bottom: 36px;
+        margin: 48px 20px 36px;
+        font-size: 14px;
+        max-width: 282px;
     }
 }
