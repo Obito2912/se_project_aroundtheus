@@ -13,14 +13,12 @@
 
 .profile__edit-button {
   background: transparent url(../images/edit-button.svg) center no-repeat;
-  min-height: 24px;
+  height: 24px;
   width: 24px;
   grid-area: button;
   padding: 0;
-  margin: 0 15px 0 15px;
-  align-self: flex-end;
+  margin: 15px 18px 0;
   border: 1px solid #ffffff;
-  min-width: 24px;
   cursor: pointer;
 }
 
@@ -32,7 +30,6 @@
   background: transparent url(../images/add-button.svg) center no-repeat;
   min-height: 50px;
   width: 150px;
-  margin-right: 10px;
   margin-left: auto;
   padding: 0;
   border: 2px solid #ffffff;
@@ -68,7 +65,7 @@
 }
 
 .profile__image {
-  min-height: 120px;
+  height: 120px;
   width: 120px;
   border-radius: 50%;
   object-fit: cover;
