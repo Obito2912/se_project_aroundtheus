@@ -20,3 +20,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+@media screen and (max-width: 320px) {
+  .page {
+    max-width: 320px;
+  }
+
+  .page__content {
+    margin: 0;
+  }
+}

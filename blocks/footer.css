@@ -9,3 +9,12 @@
 .footer__copyright {
   margin: 0;
 }
+
+@media screen and (max-width: 320px) {
+
+  .footer {
+    margin: 48px 20px 36px;
+    font-size: 14px;
+    max-width: 282px;
+  }
+}
