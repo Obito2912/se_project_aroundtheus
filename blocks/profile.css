@@ -45,21 +45,23 @@
 .profile__title {
   font-size: 42px;
   line-height: 48px;
+
   font-weight: 500;
   grid-area: title;
   margin: 0;
   text-overflow: ellipsis;
+  overflow: hidden;
   white-space: nowrap;
-  max-width: 373px;
+  max-width: 373;
 }
 
 .profile__description {
   font-size: 18px;
-  line-height: 22px;
   font-weight: 400;
   grid-area: description;
   margin: 7px 0 0;
   text-overflow: ellipsis;
+  overflow: hidden;
   white-space: nowrap;
   max-width: 415px;
 }
@@ -70,14 +72,14 @@
   border-radius: 50%;
   object-fit: cover;
   background-position: center;
-  margin-right: 24px;
+  margin-right: 30px;
 }
 
 @media screen and (max-width: 320px) {
 
   .profile {
     flex-direction: column;
-    padding: 42px 0 36px;
+    padding-top: 42px;
   }
 
   .profile__title {
@@ -92,7 +94,7 @@
   }
 
   .profile__image {
-    margin: 0;
+    margin: 0 0 30px;
   }
 
   .profile__description {
@@ -111,7 +113,7 @@
     max-width: 18px;
     max-height: 18px;
     position: absolute;
-    top: 15px;
+    top: 5px;
     right: 34px;
   }
 }

@@ -30,3 +30,10 @@
     margin: 0;
   }
 }
+
+@media screen and (max-width: 800px) {
+
+  .page__content {
+    margin: 0 auto 0;
+  }
+}
