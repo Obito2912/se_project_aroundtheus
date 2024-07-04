@@ -41,3 +41,5 @@ When the structure is done the project will be improved by using JavaScript so t
 
 **Video**
 
+https://github.com/Obito2912/se_project_aroundtheus/assets/170279060/2881fbbe-5b7d-41f3-87b8-baf97eafa178
+
