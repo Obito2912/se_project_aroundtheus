@@ -41,4 +41,3 @@ When the structure is done the project will be improved by using JavaScript so t
 
 **Video**
 
-[text](media-file/video-sample.mkv)
