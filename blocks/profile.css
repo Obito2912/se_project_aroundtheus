@@ -45,14 +45,13 @@
 .profile__title {
   font-size: 42px;
   line-height: 48px;
-
   font-weight: 500;
   grid-area: title;
   margin: 0;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  max-width: 373;
+  max-width: 373px;
 }
 
 .profile__description {
@@ -85,6 +84,7 @@
   .profile__title {
     font-size: 22px;
     max-width: 196px;
+    line-height: 27px;
   }
 
   .profile__info {
