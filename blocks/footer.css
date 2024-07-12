@@ -1,6 +1,7 @@
 .footer {
   color: #545454;
-  width: 880px;
+  max-width: 880px;
+  min-width: 282px;
   font-weight: 400;
   font-size: 18px;
   margin: 67px auto 60px;
@@ -8,7 +9,6 @@
 
 .footer__copyright {
   margin: 0;
-  max-width: 880px;
 }
 
 @media screen and (max-width: 320px) {
@@ -19,3 +19,5 @@
     max-width: 282px;
   }
 }
+
+/* FIX FOOTER */

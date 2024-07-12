@@ -20,7 +20,7 @@
     background-color: #fff;
     margin: auto;
     border-radius: 10px;
-    width: 430px;
+    max-width: 430px;
     box-sizing: border-box;
 }
 
@@ -36,6 +36,7 @@
     background-image: url(../images/close.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    padding: 0;
 }
 
 .modal__heading {
@@ -43,6 +44,7 @@
     margin: 0 0 54px;
     width: 330px;
     font-weight: 900;
+    font-size: 24px;
 }
 
 .modal__form {
@@ -66,8 +68,45 @@
     padding: 0 0 13px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
+    font-size: 14px;
 }
 
 .modal__form input:nth-last-of-type(1) {
     margin-top: 30px;
+}
+
+@media screen and (max-width:580px) {
+
+    .modal__close {
+        left: calc(100% - 40px);
+        bottom: calc(100% + 13px);
+
+    }
+
+    .modal {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    /* The display: grid is making my form to show up on a smaller screens */
+
+    .modal__container {
+        max-width: 282px;
+        padding: 25px 22px;
+        margin: 0;
+    }
+
+    .modal_opened {
+        padding: 0;
+    }
+
+    .modal__heading {
+        max-width: 238px;
+        font-size: 18px;
+    }
+
+    .modal__button {
+        font-size: 14px;
+    }
 }
