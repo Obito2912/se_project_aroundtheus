@@ -39,6 +39,10 @@
     padding: 0;
 }
 
+.modal__close:hover {
+    opacity: 0.6;
+}
+
 .modal__heading {
     color: #000;
     margin: 0 0 54px;
@@ -64,6 +68,10 @@
     border: none;
 }
 
+.modal__button:hover {
+    opacity: 0.8;
+}
+
 .modal__form input {
     padding: 0 0 13px;
     border: none;
@@ -84,12 +92,8 @@
     }
 
     .modal {
-        display: grid;
-        justify-items: center;
-        align-items: center;
+        display: none;
     }
-
-    /* The display: grid is making my form to show up on a smaller screens */
 
     .modal__container {
         max-width: 282px;
@@ -99,6 +103,9 @@
 
     .modal_opened {
         padding: 0;
+        display: grid;
+        justify-items: center;
+        align-items: center;
     }
 
     .modal__heading {

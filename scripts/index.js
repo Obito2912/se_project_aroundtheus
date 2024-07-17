@@ -34,35 +34,61 @@ const initialCards = [
 
 // console.log(initialCards);
 
+// Elements     
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const modalCloseButton = document.querySelector("#modal-close-button");
-const profileEditCloseButton = document.querySelector(".modal__close");
+const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const profileTitle = document.querySelector("#profile-title");
 const profileDescription = document.querySelector("#profile-description");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector("#profile-description-input");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
+const cardListEl = document.querySelector("#cards-list");
+const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 
+// Functions
 function closePopop() {
     profileEditModal.classList.remove("modal_opened");
 }
 
-// Event Listener to open the modal
+function getCardElement(cardData) {
+    // clone the template element with all its content and store it in a cardElement variable
+    const cardElement = cardTemplate.cloneNode(true);
+    // access the card title and image and store them in variables
+    const cardImageEl = cardElement.querySelector("#card-image");
+    const cardTitleEl = cardElement.querySelector("#card-title");
+    // set the path to the image to the link field of the object
+    cardImageEl.src = cardData.link;
+    // set the image alt text to the name field of the object
+    cardImageEl.alt = cardData.name;
+    // set the card title to the name field of the object, too
+    cardTitleEl.textContent = cardData.name;
+
+    // return the ready HTML element with the filled-in data
+    return cardElement;
+}
+
+// Event Handlers 
+function handleProfileEditSubmit(e) {
+    e.preventDefault();
+    profileTitle.textContent = profileTitleInput.value;
+    profileDescription.textContent = profileDescriptionInput.value;
+    closePopop();
+}
+
+// Event Listeners
 profileEditButton.addEventListener("click", () => {
     profileTitleInput.value = profileTitle.textContent;
     profileDescriptionInput.value = profileDescription.textContent;
     profileEditModal.classList.add("modal_opened");
 });
 
-// Event Listener to close the modal
-profileEditCloseButton.addEventListener("click", () => {
-    closePopop();
-})
+profileEditCloseButton.addEventListener("click", closePopop);
 
-profileEditForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    profileTitle.textContent = profileTitleInput.value;
-    profileDescription.textContent = profileDescriptionInput.value;
-    closePopop();
+profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+
+initialCards.forEach((cardData) => {
+    const cardElement = getCardElement(cardData);
+    cardListEl.append(cardElement);
 });
