@@ -51,7 +51,6 @@ const cardTitleInput = document.querySelector("#card-title-input");
 const cardLinkInput = document.querySelector("#card-link-input");
 const addCardCloseButton = document.querySelector("#card-add-close-button");
 const addCardForm = cardAddPopUp.querySelector(".js-add-card-form");
-const likeButtons = document.querySelectorAll(".card__like-button");
 
 // Functions
 function closePopUp() {
@@ -65,15 +64,30 @@ function getCardElement(cardData) {
     // access the card title and image and store them in variables
     const cardImageEl = cardElement.querySelector("#card-image");
     const cardTitleEl = cardElement.querySelector("#card-title");
+    const likeButton = cardElement.querySelector(".card__like-button");
+
+    // Find delete button
+    const cardTrashButton = cardElement.querySelector(".card__trash-button");
+
+    // Add the event listener to the delete button
+        cardTrashButton.addEventListener("click", () => {
+            cardElement.remove();
+            });
+
+    // add event listener for like
+    likeButton.addEventListener("click", () => {
+        likeButton.classList.toggle("card__like-button_active");
+        });
+
     // set the path to the image to the link field of the object
     cardImageEl.src = cardData.link;
     // set the image alt text to the name field of the object
     cardImageEl.alt = cardData.name;
     // set the card title to the name field of the object, too
     cardTitleEl.textContent = cardData.name;
-
-    // add event listener for like
-    // add event listener delete
+    
+    // Add click listener to the cardImage element
+    // OpenModal with previewImageModal
     // add event listener for image  
 
     // return the ready HTML element with the filled-in data
@@ -95,7 +109,7 @@ function handleAddCardSubmit(e) {
         link: cardLinkInput.value,
     };
     const cardElement = getCardElement(cardData);
-    cardListEl.append(cardElement);
+    cardListEl.prepend(cardElement);
     closePopUp();
 }
 
