@@ -22,7 +22,7 @@
           <button class="profile__edit-button" id="profile-edit-button" type="button"></button>
           <p class="profile__description" id="profile-description">Explorer</p>
         </div>
-        <button class="profile__add-button" type="button"></button>
+        <button class="profile__add-button" id="add-button" type="button"></button>
       </section>
       <section class="cards page__section">
         <ul class="cards__list" id="cards-list">
@@ -32,7 +32,6 @@
     <footer class="footer page__section">
       <p class="footer__copyright">© 2024 Around The U.S.</p>
     </footer>
-  </div>
 
   <div class="modal" id="profile-edit-modal">
     <div class="modal__container">
@@ -45,6 +44,19 @@
       </form>
     </div>
   </div>
+
+  <div class="modal add-popup">
+    <div class="modal__container">
+      <h2 class="modal__heading">New Place</h2>
+      <button class="modal__close" id="card-add-close-button"></button>
+      <form class="modal__form js-add-card-form">
+        <input type="text" name="title" placeholder="Title" id="card-title-input">
+        <input type="text" name="link" placeholder="Image Link" id="card-link-input">
+        <button class="modal__button">Create</button>
+      </form>
+    </div>
+  </div>
+</div>
 
   <template id="card-template">
     <li class="card">
