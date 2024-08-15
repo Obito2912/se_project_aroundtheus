@@ -51,11 +51,16 @@ const cardTitleInput = document.querySelector("#card-title-input");
 const cardLinkInput = document.querySelector("#card-link-input");
 const addCardCloseButton = document.querySelector("#card-add-close-button");
 const addCardForm = cardAddPopUp.querySelector(".js-add-card-form");
+const previewImageModal = document.querySelector(".modal__popup-image");
+const previewImageCloseButton = document.querySelector("#popup-image-close-button");
+
+
 
 // Functions
 function closePopUp() {
     profileEditModal.classList.remove("modal_opened");
     cardAddPopUp.classList.remove("modal_opened");
+    previewImageModal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -86,9 +91,26 @@ function getCardElement(cardData) {
     // set the card title to the name field of the object, too
     cardTitleEl.textContent = cardData.name;
     
-    // Add click listener to the cardImage element
+    // Add event listener to the cardImage element
+    cardImageEl.addEventListener("click", () => {
+        openImageModal(cardData);
+    });
     // OpenModal with previewImageModal
-    // add event listener for image  
+    function openImageModal(cardData) {
+        const previewImageEl = previewImageModal.querySelector("img");
+        const previewCaptionEl = previewImageModal.querySelector("figcaption");
+        
+        // Set the modal image source and alt text
+        previewImageEl.src = cardData.link;
+        previewImageEl.alt = cardData.name;
+    
+        // Set the modal caption text
+        previewCaptionEl.textContent = cardData.name;
+    
+        // Show the modal
+        previewImageModal.classList.add("modal_opened");
+    }
+
 
     // return the ready HTML element with the filled-in data
     return cardElement;
@@ -131,6 +153,8 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 addCardCloseButton.addEventListener("click", closePopUp);
 addCardForm.addEventListener("submit", handleAddCardSubmit);
+
+previewImageCloseButton.addEventListener("click", closePopUp);
 
 initialCards.forEach((cardData) => {
     const cardElement = getCardElement(cardData);

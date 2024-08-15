@@ -24,6 +24,16 @@
     box-sizing: border-box;
 }
 
+.modal__img {
+    position: relative;
+    margin: auto;
+}
+
+.modal__img img{
+    max-width: 800px;
+    max-height: 550px;
+}
+
 .modal__close {
     border: none;
     background-color: transparent;
@@ -93,6 +103,10 @@
 
     .modal {
         display: none;
+    }
+
+    .modal__img img{
+        max-width: 250px;
     }
 
     .modal__container {
