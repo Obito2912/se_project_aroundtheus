@@ -51,7 +51,7 @@ const cardTitleInput = document.querySelector("#card-title-input");
 const cardLinkInput = document.querySelector("#card-link-input");
 const addCardCloseButton = document.querySelector("#card-add-close-button");
 const addCardForm = cardAddPopUp.querySelector(".js-add-card-form");
-const previewImageModal = document.querySelector(".modal__popup-image");
+const previewImageModal = document.querySelector("#modal__popup-image");
 const previewImageCloseButton = document.querySelector("#popup-image-close-button");
 
 
@@ -110,7 +110,6 @@ function getCardElement(cardData) {
         // Show the modal
         previewImageModal.classList.add("modal_opened");
     }
-
 
     // return the ready HTML element with the filled-in data
     return cardElement;
