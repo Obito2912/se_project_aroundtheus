@@ -46,5 +46,4 @@ Things that I have thought about to improve the project would be adding the feat
 
 
 
-[Video with updated features](https://github.com/user-attachments/assets/3095331a-52c0-4138-9dc5-82bd87ff67f7)
-
+[Video with updated features](https://github.com/user-attachments/assets/fa80bdb8-e8a2-41a1-9269-d1772b0e2134)
