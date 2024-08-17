@@ -112,7 +112,6 @@
     .modal__close {
         left: calc(100% - 40px);
         bottom: calc(100% + 13px);
-
     }
 
     .modal__img img{
@@ -139,5 +138,17 @@
 
     .modal__button {
         font-size: 14px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .modal__close {
+        left: calc(100% - 26px);
+        width: 26px;
+        height: 26px;
+    }
+
+    .modal__close-image {
+        left: 100%;
     }
 }
