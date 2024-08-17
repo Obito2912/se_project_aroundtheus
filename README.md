@@ -44,3 +44,6 @@ Things that I have thought about to improve the project would be adding the feat
 
 [watch the video](https://github.com/Obito2912/se_project_aroundtheus/assets/170279060/2881fbbe-5b7d-41f3-87b8-baf97eafa178)
 
+
+
+[Video with updated features](https://github.com/user-attachments/assets/fa80bdb8-e8a2-41a1-9269-d1772b0e2134)
