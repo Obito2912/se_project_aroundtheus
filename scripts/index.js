@@ -49,14 +49,6 @@ const addCardCloseButton = document.querySelector("#card-add-close-button");
 const addCardForm = cardAddPopUp.querySelector(".js-add-card-form");
 const previewImageModal = document.querySelector("#modal__popup-image");
 const previewImageCloseButton = document.querySelector("#popup-image-close-button");
-// clone the template element with all its content and store it in a cardElement variable
-const cardElement = cardTemplate.cloneNode(true);
-// access the card title and image and store them in variables
-const cardImageEl = cardElement.querySelector("#card-image");
-const cardTitleEl = cardElement.querySelector("#card-title");
-const likeButton = cardElement.querySelector(".card__like-button");
-// Find delete button
-const cardTrashButton = cardElement.querySelector(".card__trash-button");
 const previewImageEl = previewImageModal.querySelector("img");
 const previewCaptionEl = previewImageModal.querySelector("figcaption");
 
@@ -65,11 +57,21 @@ function closePopUp(popUp) {
   popUp.classList.remove("modal_opened");
 }
 
-function openPopup(popup) {
-  popup.classList.add("modal_opened");
+function openPopup(popUp) {
+    popUp.classList.add('modal_opened');
 }
 
 function getCardElement(cardData) {
+  // clone the template element with all its content and store it in a cardElement variable
+  const cardElement = cardTemplate.cloneNode(true);
+  // access the card title and image and store them in variables
+  const cardImageEl = cardElement.querySelector("#card-image");
+  const cardTitleEl = cardElement.querySelector("#card-title");
+  const likeButton = cardElement.querySelector(".card__like-button");
+
+  // Find delete button
+  const cardTrashButton = cardElement.querySelector(".card__trash-button");
+
   // Add the event listener to the delete button
   cardTrashButton.addEventListener("click", () => {
     cardElement.remove();
@@ -101,7 +103,7 @@ function getCardElement(cardData) {
     previewCaptionEl.textContent = cardData.name;
 
     // Show the modal
-    previewImageModal.classList.add("modal_opened");
+    openPopup(previewImageModal);
   }
 
   // return the ready HTML element with the filled-in data
@@ -113,6 +115,7 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
+  closePopUp(profileEditModal);
 }
 
 function handleAddCardSubmit(e) {
@@ -123,19 +126,20 @@ function handleAddCardSubmit(e) {
   };
   const cardElement = getCardElement(cardData);
   cardListEl.prepend(cardElement);
+  closePopUp(cardAddPopUp);
+  cardTitleInput.value = "";
+  cardLinkInput.value = "";
 }
 
 // Event Listeners
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  profileEditModal.classList.add("modal_opened");
+  openPopup(profileEditModal);
 });
 
 cardAddButton.addEventListener("click", () => {
-  cardTitleInput.value = "";
-  cardLinkInput.value = "";
-  cardAddPopUp.classList.add("modal_opened");
+  openPopup(cardAddPopUp);
 });
 
 profileEditCloseButton.addEventListener("click", () =>
