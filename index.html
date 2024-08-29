@@ -33,29 +33,38 @@
       <p class="footer__copyright">© 2024 Around The U.S.</p>
     </footer>
 
+    <!-- EDIT MODAL -->
+
   <div class="modal" id="profile-edit-modal">
     <div class="modal__container">
       <h2 class="modal__heading">Edit Profile</h2>
       <button class="modal__close" id="modal-close-button"></button>
       <form class="modal__form">
-        <input type="text" name="title" placeholder="Jacques Cousteau" id="profile-title-input">
-        <input type="text" name="description" placeholder="Explorer" id="profile-description-input">
+        <!-- <label class="modal__label"> -->
+        <input required minlength="2" maxlength="40" class="popup__input" type="text" name="title" placeholder="Jacques Cousteau" id="profile-title-input">
+        <input required minlength="2" maxlength="40" class="popup__input" type="text" name="description" placeholder="Explorer" id="profile-description-input">
         <button class="modal__button">Save</button>
+        <!-- </label> -->
+        <span class="modal__error">Error message here</span>
       </form>
     </div>
   </div>
+
+      <!-- ADD CARD MODAL -->
 
   <div class="modal add-popup">
     <div class="modal__container">
       <h2 class="modal__heading">New Place</h2>
       <button class="modal__close" id="card-add-close-button"></button>
       <form class="modal__form js-add-card-form">
-        <input type="text" name="title" placeholder="Title" id="card-title-input">
-        <input type="text" name="link" placeholder="Image Link" id="card-link-input">
-        <button class="modal__button">Create</button>
+          <input required class="popup__input" type="text" name="title" placeholder="Title" id="card-title-input">
+          <input required class="popup__input" type="text" name="link" placeholder="Image Link" id="card-link-input">
+          <button class="modal__button">Create</button>
       </form>
     </div>
   </div>
+
+      <!-- EXPAND IMAGE MODAL -->
 
   <div class="modal" id="modal__popup-image">
     <figure class="modal__img">
@@ -78,6 +87,8 @@
   </template>
 
   <script src="scripts/index.js"></script>
+  <script src="scripts/validation.js"></script>
+
 </body>
 
 </html>
