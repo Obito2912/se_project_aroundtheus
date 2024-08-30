@@ -74,6 +74,12 @@
     max-width: 358px;
 }
 
+.modal__label {
+    display: grid;
+    color: red;    
+}
+/* WORK ON THESE PROPERTIES AND VALUES FOR THE ERROR PROOF MESSAGE */
+
 .modal__button {
     background-color: #000;
     color: #fff;
@@ -90,14 +96,14 @@
     opacity: 0.8;
 }
 
-.modal__form input {
+.modal__label input {
     padding: 0 0 13px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     font-size: 14px;
 }
 
-.modal__form input:nth-last-of-type(1) {
+#profile-description-input, #card-link-input {
     margin-top: 30px;
 }
 

@@ -2,10 +2,10 @@
 // pass all the settings on call
 
 function showInputError(formEl, inputEl, options) {
-
+    console.log(inputEl.id);
 }
 
-function checkInputValidity() {
+function checkInputValidity(formEl, inputEl, options) {
     if(!inputEl.validity.valid) {
         showInputError(formEl, inputEl, options);
     } else {
