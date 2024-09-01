@@ -107,6 +107,7 @@
     color: #FF0000;
     font-size: 12px;
     position: absolute;
+    top: 100%;
 }
 
 .modal__button:hover {
