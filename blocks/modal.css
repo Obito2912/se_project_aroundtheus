@@ -74,12 +74,6 @@
     max-width: 358px;
 }
 
-.modal__label {
-    display: grid;
-    color: red;    
-}
-/* WORK ON THESE PROPERTIES AND VALUES FOR THE ERROR PROOF MESSAGE */
-
 .modal__button {
     background-color: #000;
     color: #fff;
@@ -92,15 +86,39 @@
     border: none;
 }
 
+.modal__label {
+    display: grid;
+    position: relative;
+}
+
+.modal__button_disabled {
+    background-color: #ffffff;
+    color:rgba(0, 0, 0, .2);
+    cursor: not-allowed;
+    border: 1px solid rgba(0, 0, 0, .2);
+    cursor: auto;
+}
+
+.modal__form .modal__input.modal__input_type_error {
+    border-bottom: 1px solid #FF0000;
+}
+
+.modal__error_visible {
+    color: #FF0000;
+    font-size: 12px;
+    position: absolute;
+}
+
 .modal__button:hover {
     opacity: 0.8;
 }
 
-.modal__label input {
+.modal__input {
     padding: 0 0 13px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     font-size: 14px;
+    outline: none;
 }
 
 #profile-description-input, #card-link-input {

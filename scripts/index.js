@@ -132,6 +132,31 @@ function handleAddCardSubmit(e) {
 }
 
 // Event Listeners
+
+// Function to close modals when Escape key is pressed
+function handleEscapeKey(event) {
+  if (event.key === "Escape") {
+    const openModals = document.querySelectorAll(".modal_opened");
+    openModals.forEach((modal) => closePopUp(modal));
+  }
+}
+
+// Add event listener to the document
+document.addEventListener("keydown", handleEscapeKey);
+
+// Function to close modals when clicking outside of them
+function handleOverlayClick(event) {
+  if (event.target.classList.contains("modal_opened")) {
+    closePopUp(event.target);
+  }
+}
+
+// Add event listeners to the modals
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("click", handleOverlayClick);
+});
+
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;

@@ -45,25 +45,26 @@
         required 
         minlength="2" 
         maxlength="40" 
-        class="popup__input" 
+        class="modal__input" 
         type="text" 
         name="title" 
         placeholder="Jacques Cousteau" 
         id="profile-title-input">
-        <span class="modal__error">Error message here</span>
+        <span class="modal__error" id="profile-title-input-error"></span>
       </label>
       <label class="modal__label">
         <input 
         required 
         minlength="2" 
-        maxlength="40" 
-        class="popup__input" 
+        maxlength="200" 
+        class="modal__input" 
         type="text" 
         name="description" 
         placeholder="Explorer" 
         id="profile-description-input">
+        <span class="modal__error" id="profile-description-input-error"></span>
       </label>
-      <button class="modal__button">Save</button>
+      <button class="modal__button js-modal-button modal__button_disabled" type="submit">Save</button>
       </form>
     </div>
   </div>
@@ -78,22 +79,26 @@
         <label class="modal__label">
           <input 
           required 
-          class="popup__input" 
+          minlength="1"
+          maxlength="30"
+          class="modal__input" 
           type="text" 
           name="title" 
           placeholder="Title" 
           id="card-title-input">
+          <span class="modal__error" id="card-title-input-error"></span>
         </label>
         <label class="modal__label">
           <input 
           required 
-          class="popup__input" 
-          type="text" 
+          type="url"
+          class="modal__input" 
           name="link" 
           placeholder="Image Link" 
           id="card-link-input">
+          <span class="modal__error" id="card-link-input-error"></span>
         </label>
-          <button class="modal__button">Create</button>
+          <button class="modal__button modal__button_disabled js-modal-button">Create</button>
       </form>
     </div>
   </div>
