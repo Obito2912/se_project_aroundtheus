@@ -53,12 +53,14 @@ const previewImageEl = previewImageModal.querySelector("img");
 const previewCaptionEl = previewImageModal.querySelector("figcaption");
 
 // Functions
-function closePopUp(popUp) {
-  popUp.classList.remove("modal_opened");
+function openPopup(popUp) {
+  popUp.classList.add('modal_opened');
+  document.addEventListener("keydown", handleEscapeKey);
 }
 
-function openPopup(popUp) {
-    popUp.classList.add('modal_opened');
+function closePopUp(popUp) {
+  popUp.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscapeKey);
 }
 
 function getCardElement(cardData) {
@@ -137,12 +139,9 @@ function handleAddCardSubmit(e) {
 function handleEscapeKey(event) {
   if (event.key === "Escape") {
     const openModals = document.querySelectorAll(".modal_opened");
-    openModals.forEach((modal) => closePopUp(modal));
+    openModals.forEach(closePopUp);
   }
 }
-
-// Add event listener to the document
-document.addEventListener("keydown", handleEscapeKey);
 
 // Function to close modals when clicking outside of them
 function handleOverlayClick(event) {
