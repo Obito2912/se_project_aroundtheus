@@ -37,7 +37,7 @@ const cardData = {
   link: 'https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg'
 }
 
-const card = new Card(cardData, '#card-template');
+const card = new Card(cardData, '#card-template', handleImageClick());
 card.getView();
 
 // Elements
@@ -74,9 +74,9 @@ function closePopUp(popUp) {
 }
 
 function getCardElement(cardData) {
-  // access the card title and image and store them in variables
-  const cardImageEl = cardElement.querySelector("#card-image");
-  const cardTitleEl = cardElement.querySelector("#card-title");
+                      /* access the card title and image and store them in variables
+                      const cardImageEl = cardElement.querySelector("#card-image");
+                      const cardTitleEl = cardElement.querySelector("#card-title"); */
                       /* clone the template element with all its content and store it in a cardElement variable
                         const cardElement = cardTemplate.cloneNode(true); */
                       /* const likeButton = cardElement.querySelector(".card__like-button"); */
@@ -94,32 +94,33 @@ function getCardElement(cardData) {
                         likeButton.classList.toggle("card__like-button_active");
                       });  */
 
-  // set the path to the image to the link field of the object
-  cardImageEl.src = cardData.link;
-  // set the image alt text to the name field of the object
-  cardImageEl.alt = cardData.name;
-  // set the card title to the name field of the object, too
-  cardTitleEl.textContent = cardData.name;
+                      /* set the path to the image to the link field of the object
+                      cardImageEl.src = cardData.link;
+                      set the image alt text to the name field of the object
+                      cardImageEl.alt = cardData.name;
+                      set the card title to the name field of the object, too
+                      cardTitleEl.textContent = cardData.name; */
 
-  // Add event listener to the cardImage element
-  cardImageEl.addEventListener("click", () => {
-    openImageModal(cardData);
-  });
+                      /* Add event listener to the cardImage element
+                      cardImageEl.addEventListener("click", () => {
+                        openImageModal(cardData);
+                      }); */
   // OpenModal with previewImageModal
-  function openImageModal(cardData) {
-    // Set the modal image source and alt text
-    previewImageEl.src = cardData.link;
-    previewImageEl.alt = cardData.name;
+  
+                      /* return the ready HTML element with the filled-in data
+                      return cardElement; */
+}
 
-    // Set the modal caption text
-    previewCaptionEl.textContent = cardData.name;
+function handleImageClick(cardData) {
+  // Set the modal image source and alt text
+  previewImageEl.src = cardData.link;
+  previewImageEl.alt = cardData.name;
 
-    // Show the modal
-    openPopup(previewImageModal);
-  }
+  // Set the modal caption text
+  previewCaptionEl.textContent = cardData.name;
 
-  // return the ready HTML element with the filled-in data
-  return cardElement;
+  // Show the modal
+  openPopup(previewImageModal);
 }
 
 // Event Handlers
