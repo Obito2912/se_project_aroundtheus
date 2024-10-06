@@ -1,3 +1,5 @@
+import Card from '../components/Card.js';
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -30,6 +32,14 @@ const initialCards = [
   },
 ];
 
+const cardData = {
+  name: 'Yosemite Valley',
+  link: 'https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg'
+}
+
+const card = new Card(cardData, '#card-template');
+card.getView();
+
 // Elements
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
@@ -40,7 +50,7 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector("#profile-description-input");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardListEl = document.querySelector("#cards-list");
-const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
+                      /* const cardTemplate = document.querySelector("#card-template").content.firstElementChild; */
 const cardAddPopUp = document.querySelector(".add-popup");
 const cardAddButton = document.querySelector("#add-button");
 const cardTitleInput = document.querySelector("#card-title-input");
@@ -64,25 +74,25 @@ function closePopUp(popUp) {
 }
 
 function getCardElement(cardData) {
-  // clone the template element with all its content and store it in a cardElement variable
-  const cardElement = cardTemplate.cloneNode(true);
   // access the card title and image and store them in variables
   const cardImageEl = cardElement.querySelector("#card-image");
   const cardTitleEl = cardElement.querySelector("#card-title");
-  const likeButton = cardElement.querySelector(".card__like-button");
+                      /* clone the template element with all its content and store it in a cardElement variable
+                        const cardElement = cardTemplate.cloneNode(true); */
+                      /* const likeButton = cardElement.querySelector(".card__like-button"); */
+  
+                      // Find delete button
+                      /* const cardTrashButton = cardElement.querySelector(".card__trash-button"); */
 
-  // Find delete button
-  const cardTrashButton = cardElement.querySelector(".card__trash-button");
+                      // Add the event listener to the delete button
+                      /* cardTrashButton.addEventListener("click", () => {
+                        cardElement.remove();
+                      }); */
 
-  // Add the event listener to the delete button
-  cardTrashButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-
-  // add event listener for like
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
+                       /* add event listener for like
+                      likeButton.addEventListener("click", () => {
+                        likeButton.classList.toggle("card__like-button_active");
+                      });  */
 
   // set the path to the image to the link field of the object
   cardImageEl.src = cardData.link;
@@ -179,6 +189,8 @@ previewImageCloseButton.addEventListener("click", () =>
 );
 
 initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
+                      /* const cardElement = getCardElement(cardData); */
+  const card = new Card(cardData, '#card-template');
+  const cardElement = card.getView();                    
   cardListEl.append(cardElement);
 });
