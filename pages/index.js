@@ -1,4 +1,5 @@
 import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
 
 const initialCards = [
   {
@@ -33,11 +34,9 @@ const initialCards = [
 ];
 
 const cardData = {
-  name: 'Yosemite Valley',
-  link: 'https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg'
 }
 
-const card = new Card(cardData, '#card-template', handleImageClick());
+const card = new Card(cardData, '#card-template', handleImageClick);
 card.getView();
 
 // Elements
@@ -50,7 +49,6 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector("#profile-description-input");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardListEl = document.querySelector("#cards-list");
-                      /* const cardTemplate = document.querySelector("#card-template").content.firstElementChild; */
 const cardAddPopUp = document.querySelector(".add-popup");
 const cardAddButton = document.querySelector("#add-button");
 const cardTitleInput = document.querySelector("#card-title-input");
@@ -73,51 +71,13 @@ function closePopUp(popUp) {
   document.removeEventListener("keydown", handleEscapeKey);
 }
 
-function getCardElement(cardData) {
-                      /* access the card title and image and store them in variables
-                      const cardImageEl = cardElement.querySelector("#card-image");
-                      const cardTitleEl = cardElement.querySelector("#card-title"); */
-                      /* clone the template element with all its content and store it in a cardElement variable
-                        const cardElement = cardTemplate.cloneNode(true); */
-                      /* const likeButton = cardElement.querySelector(".card__like-button"); */
-  
-                      // Find delete button
-                      /* const cardTrashButton = cardElement.querySelector(".card__trash-button"); */
-
-                      // Add the event listener to the delete button
-                      /* cardTrashButton.addEventListener("click", () => {
-                        cardElement.remove();
-                      }); */
-
-                       /* add event listener for like
-                      likeButton.addEventListener("click", () => {
-                        likeButton.classList.toggle("card__like-button_active");
-                      });  */
-
-                      /* set the path to the image to the link field of the object
-                      cardImageEl.src = cardData.link;
-                      set the image alt text to the name field of the object
-                      cardImageEl.alt = cardData.name;
-                      set the card title to the name field of the object, too
-                      cardTitleEl.textContent = cardData.name; */
-
-                      /* Add event listener to the cardImage element
-                      cardImageEl.addEventListener("click", () => {
-                        openImageModal(cardData);
-                      }); */
-  // OpenModal with previewImageModal
-  
-                      /* return the ready HTML element with the filled-in data
-                      return cardElement; */
-}
-
 function handleImageClick(cardData) {
   // Set the modal image source and alt text
-  previewImageEl.src = cardData.link;
-  previewImageEl.alt = cardData.name;
+  previewImageEl.src = cardData._link;
+  previewImageEl.alt = cardData._name;
 
   // Set the modal caption text
-  previewCaptionEl.textContent = cardData.name;
+  previewCaptionEl.textContent = cardData._name;
 
   // Show the modal
   openPopup(previewImageModal);
@@ -137,7 +97,6 @@ function handleAddCardSubmit(e) {
     name: cardTitleInput.value,
     link: cardLinkInput.value,
   };
-  const cardElement = getCardElement(cardData);
   cardListEl.prepend(cardElement);
   closePopUp(cardAddPopUp);
   cardTitleInput.value = "";
@@ -190,8 +149,7 @@ previewImageCloseButton.addEventListener("click", () =>
 );
 
 initialCards.forEach((cardData) => {
-                      /* const cardElement = getCardElement(cardData); */
-  const card = new Card(cardData, '#card-template');
+  const card = new Card(cardData, '#card-template', handleImageClick);
   const cardElement = card.getView();                    
   cardListEl.append(cardElement);
 });
