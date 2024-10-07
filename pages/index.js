@@ -33,11 +33,6 @@ const initialCards = [
   },
 ];
 
-const cardData = {
-}
-
-const card = new Card(cardData, '#card-template', handleImageClick);
-card.getView();
 
 // Elements
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -59,6 +54,22 @@ const previewImageModal = document.querySelector("#modal__popup-image");
 const previewImageCloseButton = document.querySelector("#popup-image-close-button");
 const previewImageEl = previewImageModal.querySelector("img");
 const previewCaptionEl = previewImageModal.querySelector("figcaption");
+
+const formSettings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  modalButton: ".js-modal-button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible"
+};
+
+const editProfileForm = new FormValidator (formSettings, profileEditForm);
+const addProfileForm = new FormValidator (formSettings, addCardForm);
+
+editProfileForm.enableValidation();
+addProfileForm.enableValidation();
 
 // Functions
 function openPopup(popUp) {
@@ -97,6 +108,9 @@ function handleAddCardSubmit(e) {
     name: cardTitleInput.value,
     link: cardLinkInput.value,
   };
+  const card = new Card(cardData, '#card-template', handleImageClick);
+  const cardElement = card.getView();   
+  
   cardListEl.prepend(cardElement);
   closePopUp(cardAddPopUp);
   cardTitleInput.value = "";
