@@ -25,7 +25,7 @@ export default class Card {
         //'#card-image'
         this._cardImageElement
         .addEventListener('click', () => {
-            this._handleImageClick(this);
+            this._handleImageClick({name: this._name, link: this._link});
         })
     }
 
@@ -59,3 +59,8 @@ export default class Card {
         return this._cardElement;
     }
 }
+
+
+
+
+
