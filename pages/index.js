@@ -84,11 +84,11 @@ function closePopUp(popUp) {
 
 function handleImageClick(cardData) {
   // Set the modal image source and alt text
-  previewImageEl.src = cardData._link;
-  previewImageEl.alt = cardData._name;
+  previewImageEl.src = cardData.link;
+  previewImageEl.alt = cardData.name;
 
   // Set the modal caption text
-  previewCaptionEl.textContent = cardData._name;
+  previewCaptionEl.textContent = cardData.name;
 
   // Show the modal
   openPopup(previewImageModal);
@@ -102,16 +102,19 @@ function handleProfileEditSubmit(e) {
   closePopUp(profileEditModal);
 }
 
+function createCard(cardData) {
+  const card = new Card(cardData, '#card-template', handleImageClick);
+  return card.getView(); 
+}
+
 function handleAddCardSubmit(e) {
   e.preventDefault();
   const cardData = {
     name: cardTitleInput.value,
     link: cardLinkInput.value,
   };
-  const card = new Card(cardData, '#card-template', handleImageClick);
-  const cardElement = card.getView();   
   
-  cardListEl.prepend(cardElement);
+  cardListEl.prepend(createCard(cardData));
   closePopUp(cardAddPopUp);
   cardTitleInput.value = "";
   cardLinkInput.value = "";
@@ -162,8 +165,6 @@ previewImageCloseButton.addEventListener("click", () =>
   closePopUp(previewImageModal)
 );
 
-initialCards.forEach((cardData) => {
-  const card = new Card(cardData, '#card-template', handleImageClick);
-  const cardElement = card.getView();                    
-  cardListEl.append(cardElement);
+initialCards.forEach((cardData) => {                   
+  cardListEl.append(createCard(cardData));
 });
