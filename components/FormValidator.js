@@ -47,6 +47,11 @@ export default class FormValidator {
             this._submitButton.disabled = false;
     }
     
+    _disableSubmitButton() {
+        this._submitButton.classList.add(this._inactiveButtonClass);
+        this._submitButton.disabled = true;
+      }
+
     _setEventListeners() {
         const inputEls = [...this._form.querySelectorAll(this._inputSelector)];
         inputEls.forEach((inputEl) => {
@@ -61,6 +66,7 @@ export default class FormValidator {
     enableValidation() {
         this._form.addEventListener('submit', (e) => {
             e.preventDefault();
+            this._disableSubmitButton();
         });
         this._setEventListeners();
     }
