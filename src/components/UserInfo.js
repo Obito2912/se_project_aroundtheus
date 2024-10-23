@@ -1,20 +1,18 @@
 export default class UserInfo {
-    constructor({ nameSelector, jobSelector }) {
-        this._nameEl = document.querySelector(nameSelector);
-        this._jobEl = document.querySelector(jobSelector);
+    constructor({ nameSelector, descriptionSelector }) {
+        this._nameElement = document.querySelector(nameSelector);
+        this._descriptionElement = document.querySelector(descriptionSelector);
     }
 
-    // Method to get current user info
     getUserInfo() {
         return {
-            name: this._nameEl.textContent,
-            job: this._jobEl.textContent,
+            name: this._nameElement.textContent,
+            title: this._descriptionElement.textContent,
         };
     }
 
-    // Method to set user info after form submission
-    setUserInfo({ name, job }) {
-        this._nameEl.textContent = name;
-        this._jobEl.textContent = job;
+    setUserInfo({ name, title }) {
+        this._nameElement.textContent = name;
+        this._descriptionElement.textContent = title;
     }
 }
