@@ -6,8 +6,8 @@ export default class UserInfo {
 
     getUserInfo() {
         return {
-            name: this._nameElement.textContent,
-            title: this._descriptionElement.textContent,
+            title: this._nameElement.textContent,
+           description: this._descriptionElement.textContent,
         };
     }
 

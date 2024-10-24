@@ -34,84 +34,57 @@
 
     <!-- EDIT MODAL -->
 
-  <div class="modal profile-edit-modal">
-    <div class="modal__container">
-      <h2 class="modal__heading">Edit Profile</h2>
-      <button class="modal__close" id="modal-close-button"></button>
-      <form class="modal__form">
-        <label class="modal__label">
-        <input 
-        required 
-        minlength="2" 
-        maxlength="40" 
-        class="modal__input" 
-        type="text" 
-        name="title" 
-        placeholder="Jacques Cousteau" 
-        id="profile-title-input">
-        <span class="modal__error" id="profile-title-input-error"></span>
-      </label>
-      <label class="modal__label">
-        <input 
-        required 
-        minlength="2" 
-        maxlength="200" 
-        class="modal__input" 
-        type="text" 
-        name="description" 
-        placeholder="Explorer" 
-        id="profile-description-input">
-        <span class="modal__error" id="profile-description-input-error"></span>
-      </label>
-      <button class="modal__button js-modal-button modal__button_disabled" type="submit">Save</button>
-      </form>
+    <div class="modal profile-edit-modal">
+      <div class="modal__container">
+        <h2 class="modal__heading">Edit Profile</h2>
+        <button class="modal__close" id="modal-close-button"></button>
+        <form class="modal__form">
+          <label class="modal__label">
+            <input required minlength="2" maxlength="40" class="modal__input" type="text" name="title"
+              placeholder="name" id="profile-title-input">
+            <span class="modal__error" id="profile-title-input-error"></span>
+          </label>
+          <label class="modal__label">
+            <input required minlength="2" maxlength="200" class="modal__input" type="text" name="description"
+              placeholder="description" id="profile-description-input">
+            <span class="modal__error" id="profile-description-input-error"></span>
+          </label>
+          <button class="modal__button js-modal-button modal__button_disabled" type="submit">Save</button>
+        </form>
+      </div>
     </div>
-  </div>
 
-      <!-- ADD CARD MODAL -->
+    <!-- ADD CARD MODAL -->
 
-  <div class="modal js-add-popup">
-    <div class="modal__container">
-      <h2 class="modal__heading">New Place</h2>
-      <button class="modal__close" id="card-add-close-button"></button>
-      <form class="modal__form js-add-card-form">
-        <label class="modal__label">
-          <input 
-          required 
-          minlength="1"
-          maxlength="30"
-          class="modal__input" 
-          type="text" 
-          name="title" 
-          placeholder="Title" 
-          id="card-title-input">
-          <span class="modal__error" id="card-title-input-error"></span>
-        </label>
-        <label class="modal__label">
-          <input 
-          required 
-          type="url"
-          class="modal__input" 
-          name="link" 
-          placeholder="Image Link" 
-          id="card-link-input">
-          <span class="modal__error" id="card-link-input-error"></span>
-        </label>
+    <div class="modal js-add-popup">
+      <div class="modal__container">
+        <h2 class="modal__heading">New Place</h2>
+        <button class="modal__close" id="card-add-close-button"></button>
+        <form class="modal__form js-add-card-form">
+          <label class="modal__label">
+            <input required minlength="1" maxlength="30" class="modal__input" type="text" name="title"
+              placeholder="Title" id="card-title-input">
+            <span class="modal__error" id="card-title-input-error"></span>
+          </label>
+          <label class="modal__label">
+            <input required type="url" class="modal__input" name="link" placeholder="Image Link" id="card-link-input">
+            <span class="modal__error" id="card-link-input-error"></span>
+          </label>
           <button class="modal__button modal__button_disabled js-modal-button">Create</button>
-      </form>
+        </form>
+      </div>
+    </div>
+
+    <!-- EXPAND IMAGE MODAL -->
+
+    <div class="modal js-modal-popup-image">
+      <figure class="modal__img">
+        <img src="" alt="">
+        <figcaption></figcaption>
+        <button class="modal__close modal__close-image" id="popup-image-close-button"></button>
+      </figure>
     </div>
   </div>
-
-      <!-- EXPAND IMAGE MODAL -->
-
-  <div class="modal js-modal-popup-image">
-    <figure class="modal__img">
-      <img src="" alt="">
-      <figcaption></figcaption>
-      <button class="modal__close modal__close-image" id="popup-image-close-button"></button>
-    </figure>
-  </div>
-</div>
 
   <template id="card-template">
     <li class="card">

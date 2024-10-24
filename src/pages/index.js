@@ -43,15 +43,10 @@ const initialCards = [
 // Elements
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector(".profile-edit-modal");
-const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardAddPopUp = document.querySelector(".js-add-popup");
 const cardAddButton = document.querySelector("#add-button");
-const addCardCloseButton = document.querySelector("#card-add-close-button");
 const addCardForm = cardAddPopUp.querySelector(".js-add-card-form");
-const previewImageCloseButton = document.querySelector(
-  "#popup-image-close-button"
-);
 
 const formSettings = {
   formSelector: ".modal__form",
@@ -127,21 +122,11 @@ function handleImageClick(cardData) {
 }
 
 profileEditButton.addEventListener("click", () => {
-  editProfilePopupWithForm.open();
+  const currentUserData = userInfo.getUserInfo()
+  editProfilePopupWithForm.setInputValues(currentUserData)
+  editProfilePopupWithForm.open(currentUserData);
 });
 
 cardAddButton.addEventListener("click", () => {
   addCardPopupWithForm.open();
 });
-
-profileEditCloseButton.addEventListener("click", () =>
-  editProfilePopupWithForm.close()
-);
-
-addCardCloseButton.addEventListener("click", () =>
-  addCardPopupWithForm.close()
-);
-
-previewImageCloseButton.addEventListener("click", () =>
-  imagePopupWithImage.close()
-);
