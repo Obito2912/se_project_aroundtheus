@@ -27,14 +27,14 @@ This project is made so all the elements are displayed correctly on popular scre
 * [Link to the project on Figma](https://www.figma.com/design/JFPhASqvZ5pBjQV2ouUlim/Sprint-5_-Around-The-U.S.-_-desktop-%2B-mobile-(Copy)?node-id=0-1&t=93lWuOTVhUBWb9k5-0)  
   
 **GitHub**
-* [Link to the project on GitHub](https://obito2912.github.io/se_project_aroundtheus/)  
+* [Link to the project](https://obito2912.github.io/se_project_aroundtheus/)  
 
 **Images**  
 
 Here is an sample of how the website looks like in both resolutions(320px-1280px): 
   
-![alt text](media-file/main-page.png) 
-![alt text](media-file/mobile-page.png)
+![alt text](src/media-file/main-page.png) 
+![alt text](src/media-file/mobile-page.png)
 
 **Improvement**
 
