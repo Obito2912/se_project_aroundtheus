@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && webpack --mode production",
-    "dev": "webpack serve --mode development"
+    "dev": "webpack serve --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Ovinson Lugo",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "css-loader": "7.1.2",
     "cssnano": "7.0.6",
     "favicons-webpack-plugin": "6.0.1",
+    "gh-pages": "^6.2.0",
     "html-webpack-plugin": "5.6.2",
     "mini-css-extract-plugin": "2.9.1",
     "postcss-loader": "8.1.1",

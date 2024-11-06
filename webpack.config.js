@@ -52,9 +52,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
-    new FaviconsWebpackPlugin({
-      logo: "./src/images/favicon.ico"
-    }),
+    // new FaviconsWebpackPlugin({
+    //   logo: "./src/images/favicon.ico"
+    // }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
   ],
