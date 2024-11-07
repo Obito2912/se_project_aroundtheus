@@ -5,6 +5,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
+import Api from "../components/Api.js";
 
 import {
   initialCards,
@@ -12,10 +13,22 @@ import {
   addCardForm,
   cardAddButton,
   profileEditButton,
-  formSettings
+  formSettings,
 } from "../utils/constants.js";
 
 // INSTANCES OF MY CLASSES
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "5e486ce7-ebcd-4e77-af20-2ddda9723032",
+  },
+});
+
+api
+  .getInitialCards()
+  .then((result) => console.log("Cards fetched successfully:", result))
+  .catch((err) => console.error("Failed to fetch cards:", err));
 
 const editProfilePopupWithForm = new PopupWithForm(
   ".profile-edit-modal",
@@ -64,7 +77,6 @@ const editProfileForm = new FormValidator(formSettings, profileEditForm);
 const addProfileForm = new FormValidator(formSettings, addCardForm);
 const imagePopupWithImage = new PopupWithImage(".js-modal-popup-image");
 
-
 function handleImageClick(cardData) {
   imagePopupWithImage.open({
     link: cardData.link,
@@ -77,8 +89,8 @@ addCardPopupWithForm.setEventListeners();
 imagePopupWithImage.setEventListeners();
 
 profileEditButton.addEventListener("click", () => {
-  const currentUserData = userInfo.getUserInfo()
-  editProfilePopupWithForm.setInputValues(currentUserData)
+  const currentUserData = userInfo.getUserInfo();
+  editProfilePopupWithForm.setInputValues(currentUserData);
   editProfilePopupWithForm.open();
 });
 
