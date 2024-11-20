@@ -15,7 +15,10 @@
     </header>
     <main class="content">
       <section class="profile page__section">
-        <img class="profile__image" src="<%=require('./images/jacques-cousteau.jpg')%>" alt="Avatar" />
+        <div class="profile__image_container">
+          <img class="profile__image" src="<%=require('./images/jacques-cousteau.jpg')%>" alt="Avatar" />
+          <img class="profile__edit_icon" src="<%=require('./images/update-icon.svg')%>" alt="">
+        </div>
         <div class="profile__info">
           <h1 class="profile__title" id="profile-title">Jacques Cousteau</h1>
           <button class="profile__edit-button" id="profile-edit-button" type="button"></button>
@@ -86,6 +89,33 @@
     </div>
   </div>
 
+  <!-- DELETE CARD MODAL  -->
+  <div class="modal js-delete-modal">
+    <div class="modal__container">
+      <h2 class="modal__heading modal__question">Are you sure?</h2>
+      <button class="modal__close"></button>
+      <form class="modal__form">
+        <button class="modal__button modal__yes_button">Yes</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CHANGE PROFILE PICTURE MODAL  -->
+  <div class="modal js-change-picture-popup">
+    <div class="modal__container">
+      <h2 class="modal__heading">Change profile picture</h2>
+      <button class="modal__close" id="update-picture-close-button"></button>
+      <form class="modal__form js-update-profile-picture">
+        <label class="modal__label">
+          <input required type="url" class="modal__input_link" name="link" placeholder="Image Link">
+          <span class="modal__error" id="card-link-input-error"></span>
+        </label>
+        <button class="modal__button modal__button_disabled js-modal-button">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TEMPLATE TO RENDER CARDS  -->
   <template id="card-template">
     <li class="card">
       <img class="card__image" id="card-image" src="" alt="" />
