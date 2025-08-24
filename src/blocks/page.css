@@ -1,0 +1,48 @@
+.page {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  overflow: overlay;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.page__content {
+  margin-left: 200px;
+  margin-right: 200px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page__section {
+  max-width: 880px;
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 320px) {
+  .page__content {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+
+  .page__content {
+    margin: 0 auto;
+  }
+}
